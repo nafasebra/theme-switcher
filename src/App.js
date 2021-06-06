@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Switcher from './component/switcher';
+import ThemeContext from './context/ThemeContext';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+export default function App() {
+
+  const [theme, setTheme] = useState({
+    bgTheme: '#ffffff',
+    fgTheme: '#34495e',
+    checked: false
+  });
+
+  return ( 
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <div className="app" style={{backgroundColor: theme.bgTheme}}>
+        <h2 className="welcome-text" style={{color: theme.fgTheme}}> Theme switcher </h2> 
+        <Switcher />
+      </div>
+    </ThemeContext.Provider>
   );
 }
-
-export default App;

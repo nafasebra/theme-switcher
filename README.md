@@ -7,8 +7,6 @@
  - I use context for state management in React
  - nice style :)
 
-[Watch Demo](https://nafasebra.github.io/reactjs-theme-switcher/)
-
 <br>
 
 #### 1- you will need to Node.js for run the repo 
